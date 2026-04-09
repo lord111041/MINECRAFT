@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Minecraft Clone</title>
+
+<style>
+body {
+  margin: 0;
+  overflow: hidden;
+  background: black;
+}
+
+#inventory {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.slot {
+  width: 50px;
+  height: 50px;
+  border: 3px solid white;
+}
+
+.selected {
+  border: 3px solid red;
+}
+
+#crosshair {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin-left: -10px; /* половина ширины */
+  margin-top: -10px;  /* половина высоты */
+  pointer-events: none; /* не мешает кликам */
+}
+
+#crosshair::before, #crosshair::after {
+  content: '';
+  position: absolute;
+  background: white;
+}
+
+#crosshair::before {
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  margin-left: -1px;
+}
+
+#crosshair::after {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  margin-top: -1px;
+} 
+</style>
+
+</head>
+<body>
+
+<div id="inventory">
+  <div class="slot selected" id="slot0" style=" background-image: url(textures/purple.png);"></div>
+  <div class="slot" id="slot1" style="background-image: url(textures/tnt.png);"></div>
+  <div class="slot" id="slot2" style="background-image: url(textures/diamond.png);"></div>
+  <div class="slot" id="slot3" style="background: yellow;"></div>
+  <div class="slot" id="slot4" style="background: pink;"></div>
+  <div class="slot" id="slot5" style="background: white;"></div>
+  <div class="slot" id="slot6" style="background: gray;"></div>
+  <div class="slot" id="slot7" style="background: green;"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="game.js"></script>
+
+</body>
+</html>
